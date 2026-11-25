@@ -75,9 +75,9 @@ async function run(){if(state.running)return;let total;try{total=validate();}cat
    const headers=[...xr.map(o=>o.v.title.trim()||fullname(o.ref.sheet,o.ref.address)),...yr.map(o=>o.v.title.trim()||fullname(o.ref.sheet,o.ref.address))];
    const ncols=headers.length,colsX=xr.length;
    const head=out.getRangeByIndexes(0,0,1,ncols);head.values=[headers];head.format.font.bold=true;head.format.rowHeight=30;
-   if(colsX){const h=out.getRangeByIndexes(0,0,1,colsX);h.format.fill='#D9EAFB';}
-   if(yr.length){const h=out.getRangeByIndexes(0,colsX,1,yr.length);h.format.fill='#FFF0B8';}
-   for(let k=0;k<results.length;k+=500){const chunk=results.slice(k,k+500);const block=out.getRangeByIndexes(k+1,0,chunk.length,ncols);block.values=chunk;if(colsX)out.getRangeByIndexes(k+1,0,chunk.length,colsX).format.fill='#EFF6FF';if(yr.length)out.getRangeByIndexes(k+1,colsX,chunk.length,yr.length).format.fill='#FFFBEB';await ctx.sync();}
+   if(colsX){const h=out.getRangeByIndexes(0,0,1,colsX);h.format.fill.color='#D9EAFB';}
+   if(yr.length){const h=out.getRangeByIndexes(0,colsX,1,yr.length);h.format.fill.color='#FFF0B8';}
+   for(let k=0;k<results.length;k+=500){const chunk=results.slice(k,k+500);const block=out.getRangeByIndexes(k+1,0,chunk.length,ncols);block.values=chunk;if(colsX)out.getRangeByIndexes(k+1,0,chunk.length,colsX).format.fill.color='#EFF6FF';if(yr.length)out.getRangeByIndexes(k+1,colsX,chunk.length,yr.length).format.fill.color='#FFFBEB';await ctx.sync();}
    out.getRangeByIndexes(0,0,Math.max(1,results.length+1),ncols).format.autofitColumns();
    out.getRange('A1').select();await ctx.sync();
  });
