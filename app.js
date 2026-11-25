@@ -65,10 +65,17 @@ async function run(){if(state.running)return;let total;try{total=validate();}cat
        if(done===1||done%10===0||done===total){progress(done,total,ok);await pauseUI();}
      }
    }finally{
-     // Restore original contents, even if calculation or user cancellation fails.
-     xRanges.forEach((range,j)=>{const o=originals[j];range.formulas=[[o.formula]];});
-     app.calculationMode=originalMode;await ctx.sync();
-     app.calculate('Full');await ctx.sync();
+     // Restore original X-cell contents (formulas or constants) and calculation mode.
+     xRanges.forEach((range,j)=>{
+       const o=originals[j];
+       if(typeof o.formula==='string' && o.formula.startsWith('=')){
+         range.formulas=[[o.formula]];
+       }else{
+         range.values=[[o.value]];
+       }
+     });
+     app.calculationMode=originalMode;
+     await ctx.sync();
    }
    // Write results only after the model has been restored.
    const out=book.worksheets.add('Lab '+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,12));out.load('name');await ctx.sync();outputName=out.name;
