@@ -9,10 +9,10 @@
  <DefaultLocale>en-US</DefaultLocale>
  <DisplayName DefaultValue="Simulation Lab"/>
  <Description DefaultValue="Run multidimensional spreadsheet grid experiments using local Excel calculations."/>
- <IconUrl DefaultValue="https://YOUR-HOST.example/assets/icon-32.png"/>
- <HighResolutionIconUrl DefaultValue="https://YOUR-HOST.example/assets/icon-80.png"/>
+ <IconUrl DefaultValue="https://professor-aviv.github.io/simulation-lab/assets/icon-32.png"/>
+ <HighResolutionIconUrl DefaultValue="https://professor-aviv.github.io/simulation-lab/assets/icon-80.png"/>
  <Hosts><Host Name="Workbook"/></Hosts>
- <DefaultSettings><SourceLocation DefaultValue="https://YOUR-HOST.example/taskpane.html"/></DefaultSettings>
+ <DefaultSettings><SourceLocation DefaultValue="https://professor-aviv.github.io/simulation-lab/taskpane.html"/></DefaultSettings>
  <Permissions>ReadWriteDocument</Permissions>
  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
   <Hosts><Host xsi:type="Workbook"><DesktopFormFactor>
@@ -32,11 +32,11 @@
   </DesktopFormFactor></Host></Hosts>
   <Resources>
    <bt:Images>
-    <bt:Image id="Icon.16" DefaultValue="https://YOUR-HOST.example/assets/icon-16.png"/>
-    <bt:Image id="Icon.32" DefaultValue="https://YOUR-HOST.example/assets/icon-32.png"/>
-    <bt:Image id="Icon.80" DefaultValue="https://YOUR-HOST.example/assets/icon-80.png"/>
+    <bt:Image id="Icon.16" DefaultValue="https://professor-aviv.github.io/simulation-lab/assets/icon-16.png"/>
+    <bt:Image id="Icon.32" DefaultValue="https://professor-aviv.github.io/simulation-lab/assets/icon-32.png"/>
+    <bt:Image id="Icon.80" DefaultValue="https://professor-aviv.github.io/simulation-lab/assets/icon-80.png"/>
    </bt:Images>
-   <bt:Urls><bt:Url id="Taskpane.Url" DefaultValue="https://YOUR-HOST.example/taskpane.html"/></bt:Urls>
+   <bt:Urls><bt:Url id="Taskpane.Url" DefaultValue="https://professor-aviv.github.io/simulation-lab/taskpane.html"/></bt:Urls>
    <bt:ShortStrings>
     <bt:String id="Tab.Label" DefaultValue="Simulation Lab"/>
     <bt:String id="Group.Label" DefaultValue="Experiments"/>
