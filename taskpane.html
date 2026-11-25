@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulation Lab · Excel</title><link rel="stylesheet" href="style.css">
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script><script src="app.js" defer></script></head>
+<body><main class="wrap">
+<header><div class="eyebrow">EXCEL MODEL EXPERIMENTATION</div><h1>Simulation Lab</h1><p>Explore your workbook across a multidimensional grid. All calculations run in Excel.</p><div class="status" id="officeStatus">Connecting to Excel…</div></header>
+<section class="panel"><div class="sec-head"><h2><span class="mark blue">X</span> Decision variables</h2><button id="addX" class="ghost">+ Add Variable</button></div><p class="hint">Select a cell in Excel, then click <b>Use selection</b>. A label is optional.</p><div id="xList"></div><div class="total"><span>Overall grid evaluations</span><strong id="total">11</strong><small id="factor">11 = 11 combinations</small><small id="gridWarning"></small></div></section>
+<section class="panel"><div class="sec-head"><h2><span class="mark yellow">Y</span> Observations</h2><button id="addY" class="ghost">+ Add Observation</button></div><div id="yList"></div></section>
+<section class="panel"><div class="sec-head"><h2><span class="mark gray">Z</span> Constraints</h2><button id="addZ" class="ghost">+ Add Constraint</button></div><p class="hint">Each Z cell must evaluate to the logical value TRUE. Leave empty for no constraints.</p><div id="zList"></div></section>
+<section class="panel"><h2>Run experiment</h2><p class="hint">Every combination is calculated in the workbook. Only feasible rows are written to a new worksheet.</p><div class="option"><label><input type="checkbox" id="fullCalc" checked> Force full recalculation at each point</label></div><div class="actions"><button id="runBtn" class="primary">▶ Run Experiment</button><button id="cancelBtn" class="secondary" disabled>Cancel</button></div><div id="progressText" class="progress-label" aria-live="polite">Ready</div><div class="progress"><div id="progressBar"></div></div><div id="message" class="message" aria-live="polite"></div></section>
+<footer>Prototype v0.1 · No workbook data is uploaded to a server · Save a copy of your workbook before experimenting.</footer>
+</main></body></html>
